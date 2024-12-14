@@ -44,7 +44,7 @@ The Script will take care of all the steps mentioned in the Docs provided by See
 
 All these changes are taken care by the script.
 
-##Additionally, the script will also make sure that the packet_forwarder will start after everytime the rasp pi powers-up. To run this script, below commands must be run in order:
+## Additionally, the script will also make sure that the packet_forwarder will start after everytime the rasp pi powers-up. To run this script, below commands must be run in order:
 
 ```
 chmod +x script.sh
