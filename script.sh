@@ -24,8 +24,11 @@ cd util_chip_id
 output=$(./chip_id)
 eui=$(echo "$output" | grep -oP 'concentrator EUI: \K[0-9a-fA-F]+')
 
+# Convert lowercase letters to uppercase
+eui_capitalized=$(echo $eui | tr '[:lower:]' '[:upper:]')
+
 # Copy the EUI to the clipboard using xclip
-echo $eui | xclip -selection clipboard
+echo $eui_capitalized | xclip -selection clipboard
 
 # Output the copied EUI to the terminal (optional)
-echo "EUI ($eui) copied to clipboard."
+echo "EUI ($eui_capitalized) copied to clipboard."
