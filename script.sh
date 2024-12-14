@@ -51,6 +51,9 @@ echo $eui_capitalized | xclip -selection clipboard
 # Navigate to packet_forwarder directory
 cd ../packet_forwarder
 
+# Give execute permissions to reset_lgw.sh
+chmod +x reset_lgw.sh
+
 # Update gateway_ID in global_conf.json.sx1250.EU868
 if [ ! -z "$eui_capitalized" ]; then
     sed -i "s/\"gateway_ID\": \"[A-Fa-f0-9]*\"/\"gateway_ID\": \"$eui_capitalized\"/" global_conf.json.sx1250.EU868
