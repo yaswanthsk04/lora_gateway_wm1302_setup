@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=LoRa Forwarder
+Exec=lxterminal -e "bash -c 'cd ~/sx1302_hal/packet_forwarder && ./lora_pkt_fwd -c global_conf.json.sx1250.EU868; exec bash'"
+Terminal=true

@@ -1,12 +1,27 @@
 #!/bin/bash
 
-# Ensure xclip is installed
+# Ensure xclip and lxterminal are installed
 if ! command -v xclip &> /dev/null
 then
     echo "xclip could not be found, installing..."
     sudo apt-get update
     sudo apt-get install -y xclip
 fi
+
+if ! command -v lxterminal &> /dev/null
+then
+    echo "lxterminal could not be found, installing..."
+    sudo apt-get install -y lxterminal
+fi
+
+# Create autostart directory in ~/.config if it does not exist
+mkdir -p ~/.config/autostart
+
+# Copy the lora_pkt_fwd.desktop file to autostart directory
+cp lora_pkt_fwd.desktop ~/.config/autostart/
+
+# Change permissions to allow SUID on the lora_pkt_fwd.desktop file
+sudo chmod +s ~/.config/autostart/lora_pkt_fwd.desktop
 
 # Copy the sx1302_hal directory to the home directory
 cp -r sx1302_hal ~/sx1302_hal
